@@ -1,0 +1,25 @@
+ano_nascimento: ()
+    while 
+True:
+        try:
+            ano_nascimento = int(input("Digite o ano de nascimento (entre 1922 e 2023): "))
+            if 1922 <= ano_nascimento <= 2021:
+                return ano_nascimento
+            else:
+                print("Por favor, digite um ano válido entre 1922 e 2023.")
+        except ValueError:
+            print("Por favor, digite um ano válido.")
+
+def calcular_idade(ano_nascimento):
+    ano_atual = datetime.datetime.now().year
+    idade = ano_atual - ano_nascimento
+    return idade
+
+def main():
+    nome_completo = input("Digite seu nome completo: ")
+    nascimento: ano_nascimento()
+    idade = calcular_idade(nascimento)
+    print(f"Olá, {nome_completo}! Você completou ou completará {idade} anos em 2024.")
+
+if __name__ == "__main__":
+    main()
